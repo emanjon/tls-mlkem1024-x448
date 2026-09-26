@@ -1,9 +1,9 @@
 ---
-title: "Post-quantum hybrid ECDHE-MLKEM512 Key Agreement for TLSv1.3"
-abbrev: "ECDHE-MLKEM512 hybrid"
+title: "Post-Quantum Hybrid ML-KEM-1024/X448 Key Agreement for TLS 1.3"
+abbrev: "ML-KEM-1024/X448 Hybrid"
 category: info
 
-docname: draft-rosomakho-tls-ecdhe-mlkem512-latest
+docname: draft-preuss_mattsson-tls-mlkem1024-x448-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
@@ -20,17 +20,18 @@ venue:
   type: "Working Group"
   mail: "tls@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/tls/"
-  github: "yaroslavros/tls-ecdhe-mlkem512"
+  github: "emanjon/tls-mlkem1024-x448"
   latest: "https://yaroslavros.github.io/tls-ecdhe-mlkem512/draft-rosomakho-tls-ecdhe-mlkem512.html"
 
 author:
- -
-    fullname: Yaroslav Rosomakho
-    organization: Zscaler
-    email: yrosomakho@zscaler.com
+- name: John | Preuß Mattsson
+  organization: Ericsson
+  country: Sweden
+  email: john.mattsson@ericsson.com
 
 normative:
   FIPS203: DOI.10.6028/NIST.FIPS.203
+  RFC7748:
 
 informative:
 
