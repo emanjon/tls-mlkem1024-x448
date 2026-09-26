@@ -25,57 +25,37 @@ author:
 normative:
   FIPS203: DOI.10.6028/NIST.FIPS.203
   RFC7748:
+  RFC9846:
+  RFC9954:
 
 informative:
 
+  RFC10024:
+  I-D.ietf-tls-mlkem:
+  I-D.rosomakho-tls-ecdhe-mlkem512:
+  I-D.yang-tls-hybrid-sm2-mlkem:  
+
 --- abstract
 
-This document defines two post-quantum hybrid key exchange groups for TLS 1.3
-that combine ML-KEM-512 with ECDHE: MLKEM512X25519 and SecP256r1MLKEM512.
-These groups provide lower-overhead hybrid key exchange options for deployments
-where ClientHello size, fragmentation risk, constrained-device performance, or
-compatibility with existing network infrastructure are important
-considerations. The groups defined in this document are intended for use with
-TLS 1.3 and DTLS 1.3 and follow the hybrid key exchange construction used by
-ECDHE-MLKEM key agreement for TLS 1.3.
+This document defines a post-quantum/traditional hybrid key exchange algorithm for TLS 1.3 that combines ML-KEM-1024 with X448: MLKEM1024X448. The algorithm provides a hybrid key exchange option targeting a high security level. Compared with P-curves offering a similar security level, X448 is significantly faster and provides greater implementation robustness. Most importantly, a FIPS-validated implementation of MLKEM1024X448 guarantees that the ML-KEM-1024 component is FIPS-validated. This is not the case for SecP384r1MLKEM1024. The algorithm defined in this document is intended for use with TLS 1.3 and DTLS 1.3 and follows the hybrid key exchange construction used by ECDHE-MLKEM key agreement for TLS 1.3.
 
 --- middle
 
 # Introduction
 
-The transition to post-quantum cryptography requires new key exchange
-mechanisms for TLS 1.3 {{!TLS=I-D.ietf-tls-rfc8446bis}}. Hybrid key exchange
-combines a post-quantum key encapsulation mechanism with a traditional
-elliptic-curve Diffie-Hellman key exchange, allowing deployments to gain
-protection against future cryptographically relevant quantum computers while
-retaining the security properties of widely deployed classical key exchange
-mechanisms.
+The transition to post-quantum cryptography requires new key exchange mechanisms for TLS 1.3 {{RFC9846}}. Post-Quantum/Traditional (PQ/T) hybrid key exchange combines a post-quantum key algorithm such as ML-KEM {{FIPS203}} with a traditional key exchange algorithms such as X448 {{RFC7748}}, allowing deployments to gain protection against future Cryptanalytically Relevant Quantum Computers (CRQC) while retaining the security properties of previously trusted traditional key exchange algorithms.
 
-{{!TLS-HYBRID=I-D.ietf-tls-hybrid-design}} describes the general design for
-hybrid key exchange in TLS 1.3, and
-{{!TLS-ECDHE-MLKEM=I-D.ietf-tls-ecdhe-mlkem}} defines several ECDHE-MLKEM
-hybrid groups based on ML-KEM-768 and ML-KEM-1024.
+{{RFC9954}} describes the general design for hybrid key exchange in TLS 1.3, and {{RFC10024}}{{I-D.rosomakho-tls-ecdhe-mlkem512}}{{I-D.yang-tls-hybrid-sm2-mlkem}} defines several Post-quantum/traditional hybrid algorithm based on ML-KEM-512, ML-KEM-768, and ML-KEM-1024. {{I-D.ietf-tls-mlkem}} defines several standalone algorithm based on ML-KEM-512, ML-KEM-768, and ML-KEM-1024
 
-This document defines two additional ECDHE-MLKEM hybrid groups that use
-ML-KEM-512:
+This document defines a PQ/T hybrid key exchange algorithm for TLS 1.3 that combines ML-KEM-1024 with X448: MLKEM1024X448. The algorithm provides a hybrid key exchange option targeting a high security level. Compared with P-curves offering a similar security level, X448 is significantly faster and provides greater implementation robustness. Most importantly, a FIPS-validated implementation of MLKEM1024X448 guarantees that the ML-KEM-1024 component is FIPS-validated. This is not the case for SecP384r1MLKEM1024 {{RFC10024}}.
 
-* MLKEM512X25519
-* SecP256r1MLKEM512
-
-This document follows the construction and terminology of {{TLS-HYBRID}}. It
-defines only additional TLS NamedGroup values and their associated key share
-encodings. It does not modify the TLS 1.3 handshake, key schedule, or
-negotiation mechanisms.
+The algorithm defined in this document is intended for use with TLS 1.3 and DTLS 1.3 and follows the hybrid key exchange construction used by ECDHE-MLKEM key agreement for TLS 1.3 {{RFC9954}}. It defines only additional TLS NamedGroup values and its associated key share encodings. It does not modify the TLS 1.3 handshake, key schedule, or negotiation mechanisms.
 
 # Conventions and Definitions
 
 {::boilerplate bcp14-tagged}
 
-This document uses the terminology of TLS 1.3 {{TLS}} and hybrid key exchange
-for TLS 1.3 {{TLS-HYBRID}}.
-
-The term "ML-KEM" refers to the Module-Lattice-Based Key-Encapsulation
-Mechanism defined in {{FIPS203}}.
+This document uses the terminology of TLS 1.3 {{RFC9846}} and hybrid key exchange for TLS 1.3 {{RFC9954}}. The term "ML-KEM" refers to the Module-Lattice-Based Key-Encapsulation Mechanism defined in {{FIPS203}}.
 
 # Motivation and Applicability
 
