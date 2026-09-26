@@ -1,14 +1,13 @@
 <!-- regenerate: on (set to off if you edit this file) -->
 
-# Post-quantum hybrid ECDHE-MLKEM512 Key Agreement for TLSv1.3
+# Post-Quantum Hybrid ML-KEM-1024/X448 Key Agreement for TLS 1.3
 
-This is the working area for the individual Internet-Draft, "Post-quantum hybrid ECDHE-MLKEM512 Key Agreement for TLSv1.3".
+This is the working area for the individual Internet-Draft, "Post-Quantum Hybrid ML-KEM-1024/X448 Key Agreement for TLS 1.3".
 
 * [Editor's Copy](https://yaroslavros.github.io/tls-ecdhe-mlkem512/#go.draft-rosomakho-tls-ecdhe-mlkem512.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-rosomakho-tls-ecdhe-mlkem512)
 * [Individual Draft](https://datatracker.ietf.org/doc/html/draft-rosomakho-tls-ecdhe-mlkem512)
 * [Compare Editor's Copy to Individual Draft](https://yaroslavros.github.io/tls-ecdhe-mlkem512/#go.draft-rosomakho-tls-ecdhe-mlkem512.diff)
-
 
 ## Contributing
 
