@@ -15,13 +15,6 @@ keyword:
  - tls
  - mlkem
  - hybrid
-venue:
-  group: "Transport Layer Security"
-  type: "Working Group"
-  mail: "tls@ietf.org"
-  arch: "https://mailarchive.ietf.org/arch/browse/tls/"
-  github: "emanjon/tls-mlkem1024-x448"
-  latest: "https://yaroslavros.github.io/tls-ecdhe-mlkem512/draft-rosomakho-tls-ecdhe-mlkem512.html"
 
 author:
 - name: John | Preuß Mattsson
